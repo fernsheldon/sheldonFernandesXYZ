@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<style type="text/css">
+    html, body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; }
+  </style>
 <html lang="en" ng-app="mainApp">
 
 <head>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
   <title>SheldonFernandes.XYZ</title>
@@ -21,6 +26,8 @@
           <ul class="right hide-on-med-and-down">
             <li ng-click="main.show('home')"><a class="waves-effect waves-blue btn-flat">#Home</a></li>
             <li ng-click="main.show('about')"><a class="waves-effect waves-blue btn-flat">#About Me</a></li>
+            <li ng-click="main.show('places')"><a class="waves-effect waves-blue btn-flat">#Places</a></li>
+
             <!--  <li><a class="waves-effect waves-blue btn-flat" href="#">#Music</a></li>
             <li><a class="waves-effect waves-blue btn-flat" href="#">#WhatIAmReading</a></li>
             <li><a class="waves-effect waves-blue btn-flat" href="#">#OtherLinks</a></li> -->
@@ -29,6 +36,7 @@
           <ul id="nav-mobile" class="side-nav">
             <li ng-click="main.show('home')"><a class="waves-effect waves-blue btn-flat">#Home</a></li>
             <li ng-click="main.show('about')"><a class="waves-effect waves-blue btn-flat">#About Me</a></li>
+            <li ng-click="main.show('places')"><a class="waves-effect waves-blue btn-flat">#Places</a></li>
             <!--<li><a class="waves-effect waves-blue btn-flat" href="#">#Music</a></li>
             <li><a class="waves-effect waves-blue btn-flat" href="#">#WhatIAmReading</a></li>
             <li><a class="waves-effect waves-blue btn-flat" href="#">#OtherLinks</a></li> -->
@@ -38,10 +46,14 @@
       </nav>
     </div>
     <div class="section no-pad-bot" id="index-banner">
+
+      <div ng-include="'views/map.html'" ng-if="main.showPlaces"></div>
       <div ng-include="'views/home.html'" ng-show="main.showHome"></div>
       <div ng-include="'views/about.html'" ng-show="main.showAbout"></div>
     </div>
+
   </main>
+
 
   <!--  <div class="container">
     <div class="section">
@@ -86,22 +98,21 @@
     <div class="footer-copyright" style="padding-left: 25px;">
       Copyright SheldonFernandes.XYZ ©
       <div class="right" style="padding-right: 25px;">
-        <img src="imgs/icons/github.svg" style="height:25px">
-        <img src="imgs/icons/twitter.svg" style="height:25px">
-        <img src="imgs/icons/email.svg" style="height:25px">
+        <a href=""><img src="imgs/icons/github.svg" style="height:25px"></a>
+        <a href="https://twitter.com/sheldon_tweet"><img src="imgs/icons/twitter.svg" style="height:25px"></a>
+        <a href="mailto:fernsheldon@gmail.com"><img src="imgs/icons/email.svg" style="height:25px"></a>
       </div>
     </div>
   </footer>
 
 
   <!--  Scripts-->
+
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
   <script src="app/app.js"></script>
   <script src="app/controllers/main.js"></script>
-
   <script src="js/materialize.js"></script>
-
   <script src="js/init.js"></script>
 
 </body>

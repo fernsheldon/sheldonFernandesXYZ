@@ -1,0 +1,114 @@
+<div class="container">
+<br>
+<br>
+<h5 class="header center">Places</h5>
+<br>
+<div class="row">
+  I love to travelling to other countries and seeing and experiencing their culture. I've been lucky to travel to these places so far. Also on my bucket list are Ireland, Germany and Japan.
+</div>
+</div>
+<div class="row">
+  <div class="row">
+    <div id="map" style="width:100%; height:500px"></div>
+  </div>
+</div>
+<br>
+<br>
+
+<script>
+  var marker;
+
+  function initMap() {
+    var countryMarkers = [{
+      id: 1,
+      latitude: 21,
+      longitude: 78,
+      title: "India"
+    }, {
+      id: 2,
+      latitude: 24,
+      longitude: 45,
+      title: "Saudi Arabia"
+    }, {
+      id: 3,
+      latitude: 26,
+      longitude: 50.55,
+      title: "Bahrain"
+    }, {
+      id: 4,
+      latitude: 25.2048,
+      longitude: 55.2708,
+      title: "Dubai"
+    }, {
+      id: 5,
+      latitude: 24.4667,
+      longitude: 54.3667,
+      title: "UAE"
+    }, {
+      id: 5,
+      latitude: 1.,
+      longitude: 103,
+      title: "Singapore"
+    }, {
+      id: 7,
+      latitude: 13.7500,
+      longitude: 100.4833,
+      title: "Thailand"
+    }, {
+      id: 8,
+      latitude: 3.1333,
+      longitude: 101.7000,
+      title: "Malaysia"
+    }, {
+      id: 9,
+      latitude: 40.8833,
+      longitude: -107.0167,
+      title: "U.S.A"
+    }, {
+      id: 10,
+      latitude: 25.0667,
+      longitude: -77.3333,
+      title: "Bahamas"
+    }]
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 3,
+      center: {
+        lat: 30.33,
+        lng: 8.56
+      }
+    });
+    var infowindow = new google.maps.InfoWindow();
+
+    for (var i = 0; i < countryMarkers.length; i++) {
+
+      marker = new google.maps.Marker({
+        map: map,
+        draggable: false,
+        animation: google.maps.Animation.DROP,
+        position: {
+          lat: countryMarkers[i].latitude,
+          lng: countryMarkers[i].longitude
+        }
+      });
+      //marker.addListener('click', toggleBounce);
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(countryMarkers[i].title);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+
+  }
+
+
+  function toggleBounce() {
+    if (marker.getAnimation() !== null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC71z8TnYHYJcVTEq2oIjI_I-VIsXV0p9I&callback=initMap" async defer></script>
