@@ -78,14 +78,22 @@ controllers.controller('MainController',function() {
         vm.showAbout=true;
         vm.showHome=false;
         vm.showPlaces=false;
+        vm.showD3=false;
       }else if (page==='home') {
         vm.showAbout=false;
         vm.showHome=true;
         vm.showPlaces=false;
+        vm.showD3=false;
       }else if (page==='places') {
         vm.showAbout=false;
         vm.showHome=false;
         vm.showPlaces=true;
+        vm.showD3=false;
+      }else if (page==='D3') {
+        vm.showAbout=false;
+        vm.showHome=false;
+        vm.showPlaces=false;
+        vm.showD3=true;
       }
         }
 

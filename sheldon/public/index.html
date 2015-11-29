@@ -27,6 +27,7 @@
             <li ng-click="main.show('home')"><a class="waves-effect waves-blue btn-flat">#Home</a></li>
             <li ng-click="main.show('about')"><a class="waves-effect waves-blue btn-flat">#About Me</a></li>
             <li ng-click="main.show('places')"><a class="waves-effect waves-blue btn-flat">#Places</a></li>
+          <!--  <li ng-click="main.show('D3')"><a class="waves-effect waves-blue btn-flat">#D3</a></li> -->
 
             <!--  <li><a class="waves-effect waves-blue btn-flat" href="#">#Music</a></li>
             <li><a class="waves-effect waves-blue btn-flat" href="#">#WhatIAmReading</a></li>
@@ -37,6 +38,7 @@
             <li ng-click="main.show('home')"><a class="waves-effect waves-blue btn-flat">#Home</a></li>
             <li ng-click="main.show('about')"><a class="waves-effect waves-blue btn-flat">#About Me</a></li>
             <li ng-click="main.show('places')"><a class="waves-effect waves-blue btn-flat">#Places</a></li>
+          <!--  <li ng-click="main.show('D3')"><a class="waves-effect waves-blue btn-flat">#D3</a></li> -->
             <!--<li><a class="waves-effect waves-blue btn-flat" href="#">#Music</a></li>
             <li><a class="waves-effect waves-blue btn-flat" href="#">#WhatIAmReading</a></li>
             <li><a class="waves-effect waves-blue btn-flat" href="#">#OtherLinks</a></li> -->
@@ -50,6 +52,8 @@
       <div ng-include="'views/map.html'" ng-if="main.showPlaces"></div>
       <div ng-include="'views/home.html'" ng-show="main.showHome"></div>
       <div ng-include="'views/about.html'" ng-show="main.showAbout"></div>
+    <!--  <div ng-include="'views/D3.html'" ng-if="main.showD3"></div> -->
+
     </div>
 
   </main>
@@ -99,8 +103,8 @@
       Copyright SheldonFernandes.XYZ ©
       <div class="right" style="padding-right: 25px;">
         <a href=""><img src="imgs/icons/github.svg" style="height:25px"></a>
-        <a href="https://twitter.com/sheldon_tweet"><img src="imgs/icons/twitter.svg" style="height:25px"></a>
-        <a href="mailto:fernsheldon@gmail.com"><img src="imgs/icons/email.svg" style="height:25px"></a>
+        <a href="https://twitter.com/sheldon_tweet" target="_blank"><img src="imgs/icons/twitter.svg" style="height:25px"></a>
+        <a href="mailto:fernsheldon@gmail.com" target="_blank"><img src="imgs/icons/email.svg" style="height:25px"></a>
       </div>
     </div>
   </footer>
