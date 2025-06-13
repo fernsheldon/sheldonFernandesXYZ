@@ -35,7 +35,7 @@ controllers.controller('MainController',function() {
         title:"UAE"
       },
       {
-        id:5,
+        id:6,
         latitude: 1.,
         longitude: 103,
         title:"Singapore"
@@ -55,13 +55,13 @@ controllers.controller('MainController',function() {
       {
         id:9,
         latitude: 38.8833,
-        longitude: 77.0167,
+        longitude: -77.0167,
         title:"U.S.A"
       },
       {
         id:10,
         latitude: 25.0667,
-        longitude: 77.3333,
+        longitude: -77.3333,
         title:"Bahamas"
       }
     ]
